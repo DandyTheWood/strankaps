@@ -1,0 +1,292 @@
+body {
+    background-color: rgb(41, 40, 40);
+    font-family: 'Bell MT', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+}
+#page-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+header {
+    background-color: #232323;
+    color: white;
+    padding: 18px 4vw 18px 4vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+#logo-container {
+    flex: 0 0 auto;
+    margin-right: 2vw;
+    display: flex;
+    align-items: center;
+}
+#logo-container img, #logo-container a img {
+    width: 8vw;
+    min-width: 38px;
+    max-width: 70px;
+    height: auto;
+    mix-blend-mode: screen;
+    display: block;
+}
+#title-container {
+    flex: 1 1 auto;
+    text-align: left;
+    margin-left: 1vw;
+    min-width: 0;
+}
+#title-container h1 {
+    font-size: 2.2rem;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#title-container h3 {
+    font-size: 1.1rem;
+    margin: 0;
+    font-weight: normal;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2em;
+    z-index: 1001;
+    cursor: pointer;
+    margin-left: 2vw;
+}
+nav#sliding-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-left: 2vw;
+    position: static;
+    background: none;
+    width: auto;
+    height: auto;
+    padding-top: 0;
+    left: 0;
+    transition: none;
+    z-index: auto;
+}
+nav#sliding-menu div {
+    display: inline-block;
+    margin-right: 1vw;
+}
+nav#sliding-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: transform 0.2s, text-decoration 0.2s;
+    display: inline-block;
+}
+nav#sliding-menu a:hover {
+    transform: scale(1.12);
+    text-decoration: none;
+}
+main#content {
+    flex: 1 1 auto;
+    padding: 40px 20px;
+}
+#main-content {
+    max-width: 900px;
+    margin: 0 auto;
+    background: rgba(35,35,35,0.95);
+    padding: 30px;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.3rem;
+    transition: opacity 0.4s, transform 0.4s;
+    opacity: 1;
+    transform: translateY(0);
+}
+#main-content.fade-out {
+    opacity: 0;
+    transform: translateY(-40px);
+}
+#main-content.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+footer {
+    background: #232323;
+    color: #ccc;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 1.1rem;
+}
+#footer-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2em 0;
+    background: transparent;
+    color: white;
+    font-size: 1.1rem;
+}
+table th, table td {
+    border: 1.5px solid #fff;
+    padding: 0.7em 1em;
+    text-align: left;
+}
+table th {
+    background: rgba(255,255,255,0.08);
+    font-weight: bold;
+}
+table tr:nth-child(even) {
+    background: rgba(255,255,255,0.04);
+}
+blockquote {
+    background: rgba(255,255,255,0.06);
+    border-left: 4px solid #fff;
+    margin: 1.5em 0;
+    padding: 1em 1.5em;
+    font-style: italic;
+    color: #fff;
+    border-radius: 6px;
+}
+
+#menu-toggle {
+    display: none;
+}
+nav#sliding-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-left: 2vw;
+    position: static;
+    background: none;
+    width: auto;
+    height: auto;
+    padding-top: 0;
+    left: 0;
+    transition: none;
+    z-index: auto;
+}
+
+/* Large desktops */
+@media (min-width: 1400px) {
+    #main-content, #footer-content {
+        max-width: 1200px;
+        font-size: 1.5rem;
+        padding: 45px;
+    }
+    #title-container h1 {
+        font-size: 3.5rem;
+    }
+    #title-container h3 {
+        font-size: 1.8rem;
+    }
+    nav#sliding-menu a {
+        font-size: 1.7rem;
+    }
+}
+
+/* Tablets and smaller (below 1000px) */
+@media (max-width: 999px) {
+    header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 3vw 14px 3vw;
+    }
+    #logo-container img, #logo-container a img {
+        width: 12vw;
+        min-width: 32px;
+        max-width: 55px;
+    }
+    #title-container h1 {
+        font-size: 1.5rem;
+    }
+    #title-container h3 {
+        font-size: 0.95rem;
+    }
+    #menu-toggle {
+        display: block;
+        position: static;
+        margin-left: 2vw;
+    }
+    nav#sliding-menu {
+        position: fixed;
+        left: -250px;
+        top: 0;
+        width: 220px;
+        height: 100%;
+        background: #232323;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding-top: 80px;
+        transition: left 0.3s;
+        z-index: 1000;
+        gap: 0;
+        margin-left: 0;
+        display: flex;
+    }
+    nav#sliding-menu.open {
+        left: 0;
+    }
+    nav#sliding-menu div {
+        display: block;
+        margin: 20px 0 0 20px;
+    }
+    nav#sliding-menu a {
+        font-size: 1.1rem;
+    }
+}
+
+/* Phones (below 600px) */
+@media (max-width: 599px) {
+    header {
+        padding: 10px 2vw 10px 2vw;
+    }
+    #logo-container img, #logo-container a img {
+        width: 16vw;
+        min-width: 24px;
+        max-width: 40px;
+    }
+    #title-container h1 {
+        font-size: 1.1rem;
+    }
+    #title-container h3 {
+        font-size: 0.8rem;
+    }
+    nav#sliding-menu a {
+        font-size: 0.95rem;
+    }
+}
+
+/* Small phones (below 450px) */
+@media (max-width: 450px) {
+    header {
+        padding: 7px 1vw 7px 1vw;
+    }
+    #logo-container img, #logo-container a img {
+        width: 20vw;
+        min-width: 18px;
+        max-width: 32px;
+    }
+    #title-container h1 {
+        font-size: 0.95rem;
+    }
+    #title-container h3 {
+        font-size: 0.7rem;
+    }
+    nav#sliding-menu a {
+        font-size: 0.85rem;
+    }
+}
